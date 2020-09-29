@@ -1,11 +1,12 @@
 import React from "react";
 
-import { Layout } from "antd";
+import { Layout, Row } from "antd";
 
 import Navbar from "./NavbarComponent";
 import Sidebar from "./SidebarComponent";
 import Footer from "./FooterComponent";
 
+import AnimatedPlot from "../SpaceworkViewComponent/index";
 
 export default function HomeView(props) {
 
@@ -18,7 +19,9 @@ export default function HomeView(props) {
                     <Sidebar />
 
                     <Layout.Content style={{ padding: '24px 24px', minHeight: 580, backgroundColor: "white" }}>
-                        Content
+                        <Row justify="center">
+                            <AnimatedPlot title="Espace de travail" />
+                        </Row>
                     </Layout.Content>
                 </Layout>
             </Layout.Content>

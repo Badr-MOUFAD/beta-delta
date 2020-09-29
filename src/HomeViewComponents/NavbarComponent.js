@@ -3,6 +3,7 @@ import { Layout, Row, Col, Button } from "antd";
 
 import { GithubOutlined, BoldOutlined, UpOutlined, SmallDashOutlined } from "@ant-design/icons";
 
+
 export default function NavbarComponent(props) {
 
     return(
@@ -38,9 +39,16 @@ export function LogoComponent(props) {
 export function ContributeComponent() {
 
     return(
-        <Col>
-            <Button icon={<GithubOutlined style={{ fontSize: '25px'}}/>}type="text"></Button>
-        </Col>
+        <Row align="middle">
+            <Col>
+                <Button 
+                    icon={<GithubOutlined style={{ fontSize: '25px', color: "black"}}/>} 
+                    type="link" 
+                    href="https://github.com/Badr-MOUFAD/beta-delta"
+                    target="_blank">    
+                </Button>
+            </Col>
+        </Row>
     );
 }
 
