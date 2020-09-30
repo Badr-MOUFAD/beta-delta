@@ -3,9 +3,11 @@ import React from "react";
 import { Card, Row, Col, Button } from "antd";
 import { RightCircleOutlined, PlayCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 
+import { matrix } from "mathjs";
 
 import createPlotlyComponent from 'react-plotly.js/factory';
 const Plot = createPlotlyComponent(window.Plotly);
+
 
 
 export default function AnimatedPlotComponent(props) {
@@ -23,24 +25,9 @@ export default function AnimatedPlotComponent(props) {
                 <Col>
                     <Plot
                         data={[
-                            /* {
-                              x: [1, 2, 3],
-                              y: [2, 6, 3],
-                              type: 'scatter',
-                              mode: 'lines+markers',
-                              marker: {color: 'red'},
-                            },
-                            {
-                                type: 'bar',
-                                x: [1, 2, 3],
-                                y: [2, 5, 3]
-                            }, */
                             {
                                 type: "heatmap",
-                                z: [
-                                    [1, 2],
-                                    [3, 4]
-                                ],
+                                z: [[1, 2], [3, 4]],
                                 x: ["Monday", "Tuesday"],
                                 y: ["Monday", "Tuesday"]
                             }
