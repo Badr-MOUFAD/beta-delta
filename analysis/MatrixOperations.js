@@ -166,6 +166,9 @@ function createIdentity(n) {
     return result;
 }
 
+
+export const matrix = { add, multiply, inverse }
+
 //example
 //console.log(createIdentity(3));
 //let A = [[4, 0, 0], [2, 5, 0], [1, 5, 9]];
