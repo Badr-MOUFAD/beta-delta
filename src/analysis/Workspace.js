@@ -1,7 +1,7 @@
 const BasicMath = require("./BasicMath");
 
 
-function Workspace(R, r, L, H) {
+export default function Workspace(R, r, L, H) {
     const cosPi3 = Math.cos(Math.PI / 3);
     const sinPi3 = Math.sin(Math.PI / 3);
     const DR = R - r;
@@ -85,8 +85,6 @@ function Workspace(R, r, L, H) {
         return false;
     }
 
-    console.log(aboveD3([0, 0, 0]));
-
     // algorithm
     const xLim = Math.floor(R);
     const yLim = Math.floor(R);
@@ -97,7 +95,7 @@ function Workspace(R, r, L, H) {
 
     let X = BasicMath.lineSpace(-xLim, xLim, nbPoints);
     let Y = BasicMath.lineSpace(-yLim, yLim, nbPoints);
-    let Z = BasicMath.lineSpace(0, zLim, nbPlans)
+    let Z = BasicMath.lineSpace(0, zLim, nbPlans);
 
     let workSpace = [];
 
@@ -122,10 +120,10 @@ function Workspace(R, r, L, H) {
                 let valueL2 = L2([X[i], Y[j], Z[k]]);
                 let valueL3 = L3([X[i], Y[j], Z[k]]);
             
-                if(!(undefined in [valueL1, valueL2, valueL3])) {
+                if(valueL1 !== undefined && valueL2 !== undefined && valueL3 !== undefined) {
                     workSpaceForZ.x.push(X[i]);
                     workSpaceForZ.y.push(Y[j]);
-                }            
+                }         
             }
         }
 
@@ -138,4 +136,4 @@ function Workspace(R, r, L, H) {
 
 //example
 //console.log(WorkSpace(225.61, 60, 210, 1200))
-//console.log(WorkSpace(226, 60, 244, 1200));
+//console.log(Workspace(226, 60, 244, 1200));
